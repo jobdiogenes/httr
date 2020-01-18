@@ -212,7 +212,7 @@ check_scope <- function(x) {
 }
 
 # Wrap base::interactive in a non-primitive function so that the call can be mocked for testing
-is_interactive <- function() interactive()
+is_interactive <- function() rlang::is_interactive()
 
 check_oob <- function(use_oob, oob_value = NULL) {
   if (!is.logical(use_oob) || length(use_oob) != 1) {
